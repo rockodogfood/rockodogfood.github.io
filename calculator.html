@@ -1,181 +1,63 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html>
+<body>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<h2>Rocko's Food Calculator</h2>
 
-    <title>Rocko's Dog Food</title>
+<p>How heavy is your dog?</p>
+<select id="weight" onchange="onWeightChange()">
+  <option value="none">Select Weight</option>
+  <option value="0">5</option>
+  <option value="1">10</option>
+  <option value="2">15</option>
+  <option value="3">20</option>
+  <option value="4">25</option>
+  <option value="5">30</option>
+  <option value="6">35</option>
+  <option value="7">40</option>
+  <option value="8">45</option>
+  <option value="9">50</option>
+  <option value="10">65</option>
+  <option value="11">70</option>
+</select>
 
-    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+<p>How old is your dog?</p>
+<select id="age">
+  <option value="none">Select Age</option>
+  <option value="0">Puppy</option>
+  <option value="1">Adult</option>
+  <option value="2">Senior</option>
+</select>
 
-    <!-- Custom CSS -->
-    <link href="css/freelancer.css" rel="stylesheet">
+<p>How active is your dog?</p>
+<select id="activity">
+  <option value="none">Select Activity</option>
+  <option value="0">Less Active</option>
+  <option value="1">Normal</option>
+  <option value="2">Very Active</option>
+</select>
 
-    <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+<p id="price"></p>
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<script>
 
-<style type="text/css"></style><style type="text/css"></style></head>
+var text = '{"Options":[{"Weight":5,"Price":21.6},{"Weight":10,"Price":42},{"Weight":15,"Price":51},{"Weight":20,"Price":69},{"Weight":25,"Price":87},{"Weight":30,"Price":105},{"Weight":35,"Price":120},{"Weight":40,"Price":132},{"Weight":45,"Price":144},{"Weight":50,"Price":153},{"Weight":55,"Price":168},{"Weight":60,"Price":174},{"Weight":65,"Price":189},{"Weight":70,"Price":207}]}';
 
-<body id="page-top" class="index">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#page-top">Rocko's Dog Food</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden active">
-                        <a href="#page-top"></a>
-                    </li>
-                    
-                    <li class="page-scroll">
-                        <a href="plans.html">Plans &amp; Pricing</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                <h2>Rocko's Food Calculator</h2>
-
-                <p>How heavy is your dog?</p>
-                <select id="weight" onchange="onWeightChange()">
-                  <option value="none">Select Weight</option>
-                  <option value="0">5</option>
-                  <option value="1">10</option>
-                  <option value="2">15</option>
-                  <option value="3">20</option>
-                  <option value="4">25</option>
-                  <option value="5">30</option>
-                  <option value="6">35</option>
-                  <option value="7">40</option>
-                  <option value="8">45</option>
-                  <option value="9">50</option>
-                  <option value="10">65</option>
-                  <option value="11">70</option>
-                </select>
-
-                <p id="price">This would cost $21.6</p>
-
-                <script>
-
-                var text = '{"Options":[{"Weight":5,"Price":21.6},{"Weight":10,"Price":42},{"Weight":15,"Price":51},{"Weight":20,"Price":69},{"Weight":25,"Price":87},{"Weight":30,"Price":105},{"Weight":35,"Price":120},{"Weight":40,"Price":132},{"Weight":45,"Price":144},{"Weight":50,"Price":153},{"Weight":55,"Price":168},{"Weight":60,"Price":174},{"Weight":65,"Price":189},{"Weight":70,"Price":207}]}';
-
-                obj = JSON.parse(text);
+obj = JSON.parse(text);
 
 
-                function onWeightChange() {
+function onWeightChange() {
 
-                    var weightOption = document.getElementById("weight").value;
+    var weightOption = document.getElementById("weight").value;
 
-                    if (weightOption == 'none') {
-                      document.getElementById("price").innerHTML = "Select a weight!";
-                    } else {
-                      document.getElementById("price").innerHTML = "This would cost $" + obj.Options[weightOption].Price;
-                    }
-                }
+    if (weightOption == 'none') {
+      document.getElementById("price").innerHTML = "";
+    } else {
+      document.getElementById("price").innerHTML = "This would cost $" + obj.Options[weightOption].Price + " if you buy regular Dog Food. But with Rocko's Dog Food ";
+    }
+}
 
-                </script>
-                </div>
-            </div>
-        </div>
-    </header>
-    
+</script>
 
-    <!-- Footer -->
-    <footer class="text-center">
-        <div class="footer-above">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-col col-md-6">
-                        <h3>Around the Web</h3>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="http://www.facebook.com/rockosdogfood" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/RockosDogFood" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="https://instagram.com/rockoisdog" class="btn-social btn-outline"><i class="fa fa-fw fa-instagram"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer-col col-md-6">
-                        <h3>About Rocko's</h3>
-                        <p>Nutritious dog food delivered monthly, with a matching supply going to a dog in need.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-below">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        Copyright © Rocko's Dog Food 2016
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-top page-scroll visible-xs visible-sm">
-        <a class="btn btn-primary" href="#page-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
-    </div>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/freelancer.js"></script>
-
-
-
-
-
-</body></html>
+</body>
+</html>
