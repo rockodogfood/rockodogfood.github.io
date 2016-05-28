@@ -48,8 +48,8 @@ $(document).ready(function() {
             price: (obj.Options[weightOption].Price + 1) * 5 ,
             weight: weightOption.toString(),
             orderTime: new Date(),
-            age: document.getElementById("age").value,
-            activity: document.getElementById("activity").value
+            age: $('input[name="age"]:checked').val();,
+            activity: $('input[name="activity"]:checked').val();
         };
 
       // Get a key for a new Post.
@@ -61,6 +61,8 @@ $(document).ready(function() {
 
       return firebase.database().ref().update(updates);
     };
+
+
 
 
 });
