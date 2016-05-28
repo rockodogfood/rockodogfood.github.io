@@ -23,10 +23,20 @@ $(document).ready(function() {
     });
 
     $("#calculate").click(function() {
+        $("#confirmation").hide();
+
         $("#price-output").show();
-        document.getElementById("price").innerHTML = "From $" + obj.Options[weightOption].Price + " / week";
-        document.getElementById("age").innerHTML = "";
-        ga('send', 'event', 'Calculator', 'Confirm Purchase', 'put all the forms elements in a csv string here', 0, null);
+        document.getElementById("price").innerHTML = "From $" + obj.Options[weightOption].Price.toFixed(2) + " / week";
+        //document.getElementById("age").innerHTML = "";
+    });
+
+    $("#preorder").click(function(){
+        $("#price-output").fadeOut(1000);
+        $("#confirmation").fadeIn(1000);
+
+
+        var order = document.getElementById("name-tf").value + "," + document.getElementById("email-tf").value + "," + weightOption.toString();
+        ga('send', 'event', 'Calculator', 'Confirm Purchase', order, 0, null);
     });
 
 
