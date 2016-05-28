@@ -47,7 +47,9 @@ $(document).ready(function() {
             email: document.getElementById("email-tf").value,
             price: (obj.Options[weightOption].Price + 1) * 5 ,
             weight: weightOption.toString(),
-            orderTime: new Date()
+            orderTime: new Date(),
+            age: document.getElementById("age").value,
+            activity: document.getElementById("activity").value
         };
 
       // Get a key for a new Post.
