@@ -72,7 +72,7 @@
 
                 <h2>Rocko's Food Calculator</h2>
 
-                <p>How heavy is your dog?</p>
+                <!-- <p>How heavy is your dog?</p>
                 <select id="weight" onchange="onWeightChange()">
                   <option value="none">Select Weight</option>
                   <option value="0">5</option>
@@ -103,29 +103,35 @@
                   <option value="0">Less Active</option>
                   <option value="1">Normal</option>
                   <option value="2">Very Active</option>
-                </select>
+                </select> -->
 
-                <p id="price"></p>
+                <!-- <p id="price"></p> -->
 
-                <script>
+                <p>How heavy is your dog?</p>
+                <div id="slider"></div>
 
-                var text = '{"Options":[{"Weight":5,"Price":21.6},{"Weight":10,"Price":42},{"Weight":15,"Price":51},{"Weight":20,"Price":69},{"Weight":25,"Price":87},{"Weight":30,"Price":105},{"Weight":35,"Price":120},{"Weight":40,"Price":132},{"Weight":45,"Price":144},{"Weight":50,"Price":153},{"Weight":55,"Price":168},{"Weight":60,"Price":174},{"Weight":65,"Price":189},{"Weight":70,"Price":207}]}';
+                <p>
+                    <input type="text" id="weight-value" value=5 readonly style="border:0; color:#f6931f; font-weight:bold;">
+                </p>
 
-                obj = JSON.parse(text);
+                <button id="calculate" class="btn btn-primary">Calculate</button>
 
-
-                function onWeightChange() {
-
-                    var weightOption = document.getElementById("weight").value;
-
-                    if (weightOption == 'none') {
-                      document.getElementById("price").innerHTML = "";
-                    } else {
-                      document.getElementById("price").innerHTML = "This would cost $" + obj.Options[weightOption].Price + " if you buy regular Dog Food. But with Rocko's Dog Food ";
-                    }
-                }
-
-                </script>
+                <div id="price-output" class="row" style="display: none;">
+                  <div class="col-md-6">
+                      <div class="panel panel-info">
+                         <div class="panel-heading"><h3 id="age" class="text-center">Puppy</h3></div>
+                             <div class="panel-body text-center">
+                                <p class="lead" style="font-size:40px"><strong id="price">From $5 / week</strong></p>
+                            </div>
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="list-group-item"><i class="icon-ok text-danger"></i> Personal use</li>
+                            <li class="list-group-item"><i class="icon-ok text-danger"></i> Unlimited projects</li>
+                            <li class="list-group-item"><i class="icon-ok text-danger"></i> 27/7 support</li>
+                        </ul>
+                        <div class="panel-footer">
+                            <a class="btn btn-lg btn-block btn-danger" href="/calculator.html">Find out more!</a>
+                        </div>
+                     </div>
                 </div>
             </div>
         </div>
@@ -177,7 +183,11 @@
     </div>
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <!-- <script src="js/jquery.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
@@ -194,6 +204,8 @@
     <!-- Custom Theme JavaScript -->
     <script src="js/freelancer.js"></script>
 
+    <!-- Code for calculator -->
+    <script src="js/calculator.js"></script>
 
 
 
