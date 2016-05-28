@@ -216,6 +216,19 @@ header .intro-text .skills {
     text-decoration: underline;
 }
 
+#price-output input[type="radio"] {
+    display: none;
+}
+
+.checked .panel-info {
+    outline: 5px solid #fff;
+}
+
+section.success a.btn,
+section.success a.btn:hover {
+    color: #fff;
+}
+
 .ui-slider .ui-slider-handle {
     width: 50px !important;
     height: 24px !important;

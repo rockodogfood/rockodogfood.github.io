@@ -15,6 +15,7 @@ $(document).ready(function() {
             $( "#weight-value" ).val(ui.value );
             $(this).find('.ui-slider-handle').text(ui.value + "kg");
             weightOption = ui.value / 5 - 1;
+            reCalcuate();
         },
         create: function(event, ui) {
            var v=$(this).slider('value');
@@ -22,23 +23,76 @@ $(document).ready(function() {
        }
     });
 
-    $("#calculate").click(function() {
-        $("#confirmation").hide();
-
-        $("#price-output").show();
-        document.getElementById("price").innerHTML = "From $" + obj.Options[weightOption].Price + " / week";
+    $('#price-output input').click(function () {
+        $('input:not(:checked)').parent().parent().parent().removeClass("checked");
+        $('input:checked').parent().parent().parent().addClass("checked");
+        if ( $("#3month-col").hasClass("checked") ) {
+            alert("3");
+        }
+        else if ( $("#6month-col").hasClass("checked") ) {
+            alert("6");
+        }
+        else if ( $("#12month-col").hasClass("checked") ) {
+            alert("12");
+        };
     });
+
+    // Listen for changes
+    $('input:radio[name="age"]').change(function() {
+        reCalcuate();
+    });
+
+    $('input:radio[name="activity"]').change(function() {
+        reCalcuate();
+    });
+
 
     $("#preorder").click(function(event){
         event.preventDefault();
         $("#price-output").fadeOut(500);
         $("#confirmation").fadeIn(500);
 
-
-        //var order = document.getElementById("name-tf").value + "," + document.getElementById("email-tf").value + "," + weightOption.toString();
-        //ga('send', 'event', 'Calculator', 'Confirm Purchase', order, 0, null);
         writeNewPost();
     });
+
+    function reCalcuate() {
+        var price = obj.Options[weightOption].Price;
+        price = applyAge(price);
+        price = applyActivity(price);
+
+        var threeMonthPrice = price * 1.02;
+        var sixMonthPrice = price * 1;
+        var twelveMonthPrice = price * 0.98;
+
+        //Edit 3 boxes values.
+        document.getElementById("3month-price").innerHTML = "$" + (threeMonthPrice).toFixed(2) + " / week";
+        document.getElementById("6month-price").innerHTML = "$" + (sixMonthPrice).toFixed(2) + " / week";
+        document.getElementById("12month-price").innerHTML = "$" + (twelveMonthPrice).toFixed(2) + " / week";
+    };
+
+    function applyAge(value) {
+        var size = $('input[name="age"]:checked').val();
+        if (size === "Puppy") {
+            value = value * 0.98;
+        } else if (size == "Adult") {
+            value = value;
+        } else { //Senior
+            value = value * 1.02;
+        }
+        return value;
+    };
+
+    function applyActivity(value) {
+        var activity = $('input[name="activity"]:checked').val()
+        if (activity === "Less") {
+            value = value * 0.95;
+        } else if (activity == "Normal") {
+            value = value;
+        } else { //Active
+            value = value * 1.05;
+        }
+        return value;
+    };
 
     function writeNewPost() {
         // A post entry.

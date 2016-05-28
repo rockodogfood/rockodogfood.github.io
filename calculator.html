@@ -70,86 +70,172 @@
                 <div class="col-lg-12 text-center">
 
                 <h2>Rocko's Food Calculator</h2>
+                <hr class="star-light">
                 <br />
 
                 <p class="lead" style="font-size:20px"> Premium ingredients and your pet's specific taste come together with our recipe finder to create a mealtime experience unlike any other. Use Rocko's food calculator below to estimate how much you're spending on food for your dog based in his weight, age, and lifestyle.</p>
-                <br />
-                <hr class="star-light">
-
-                <p>How heavy is your dog?</p>
-                <div class="slider-wrap">
-                    <div id="slider"></div>
-                </div>
-
-                <br />
-
-                <div id="age" class="age">
-                    <p>How old is your dog?</p>
-                    <label>
-                        Puppy
-                        <input type="radio" name="age" value="Puppy" />
-                        <img src="img/puppy_icon.png">
-                    </label>
-
-                    <label>
-                        Adult
-                        <input type="radio" name="age" value="Adult"/>
-                        <img src="img/adult_icon.png">
-                    </label>
-
-                    <label>
-                        Senior
-                        <input id="fb3" type="radio" name="age" value="Senior" />
-                        <img src="img/senior_icon.png">
-                    </label>
-                </div>
-
-                <div id="activity" class="activity">
-                    <p>How active is your dog?</p>
-                    <label>
-                        Not at all
-                        <input type="radio" name="activity" value="Less" />
-                        <img src="img/lazy_icon.png">
-                    </label>
-
-                    <label>
-                        Somewhat
-                        <input type="radio" name="activity" value="Normal"/>
-                        <img src="img/normal_icon.png">
-                    </label>
-
-                    <label>
-                        Very active
-                        <input id="fb3" type="radio" name="activity" value="Active" />
-                        <img src="img/agile_icon.png">
-                    </label>
-                </div>
-
-                <button id="calculate" class="btn btn-primary">Calculate</button>
-
-                <div id="price-output" class="row" style="display: none;">
-                    <br />
-                    <div class="panel-body text-center">
-                        <p class="lead" style="font-size:40px"><strong id="price">From $5 / week</strong></p>
-                    </div>
-                    <div class="panel-body">
-                        <p class="lead" style="font-size:20px"><strong id="price">Interested? Fill in your details below to pre-order. You will be contacted to confirm when we launch.</strong></p>
-                    </div>
-                    <form>
-                        <input id="name-tf" type="email" value="" name="Name" placeholder="Name" class="form-control required email">
-                        <input id="email-tf" type="email" value="" name="Email" placeholder="Email Address" class="form-control required email">
-                        <a id="preorder" class="btn btn-lg btn-block btn-primary" href="#">Submit Preorder</a>
-                    </form>
-                </div>
-
-                <div id="confirmation" class="row" style="display: none;">
-                    <div class="panel-body">
-                        <p class="lead" style="font-size:20px"><strong id="price">Thanks for your pre-order. We'll be in touch soon. In the mean time, can we get a <a href="http://twitter.com/home?status=Cool!%20Fresh%20dog%20food%20and%20helping%20dogs%20in%20need.%20http://www.rockosdogfood.co/" target="_blank" >tweet?</a> </strong></p>
-                    </div>
-
-                </div>
+            </div>
         </div>
     </header>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Our brands</h2>
+                    <hr class="star-primary">
+                    <div class="row our-brands">
+                        <div class="col-md-3">
+                            <img src="img/Logo1_RC.png">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="img/Logo2_Hills.png">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="img/Logo3_Eukanuba.png">
+                        </div>
+                        <div class="col-md-3">
+                            <img src="img/Logo4_Pedigree.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="success">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Calculate</h2>
+                    <hr class="star-light">
+                    <h4>How much does your dog weigh?</h4>
+                    <div class="slider-wrap">
+                        <div id="slider"></div>
+                    </div>
+
+                    <br />
+
+                    <div id="age" class="age">
+                        <h4>How old is your dog?</h4>
+                        <label>
+                            <input type="radio" name="age" value="Puppy" />
+                            <img src="img/puppy_icon.png">
+                            <p>Puppy</p>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="age" value="Adult"/>
+                            <img src="img/adult_icon.png">
+                            <p>Adult</p>
+                        </label>
+
+                        <label>
+                            <input id="fb3" type="radio" name="age" value="Senior" />
+                            <img src="img/senior_icon.png">
+                            <p>Senior</p>
+                        </label>
+                    </div>
+
+                    <div id="activity" class="activity">
+                        <h4>How active is your dog?</h4>
+                        <label>
+                            <input type="radio" name="activity" value="Less" />
+                            <img src="img/lazy_icon.png">
+                            <p>Not at all</p>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="activity" value="Normal"/>
+                            <img src="img/normal_icon.png">
+                            <p>Somewhat</p>
+                        </label>
+
+                        <label>
+                            <input id="fb3" type="radio" name="activity" value="Active" />
+                            <img src="img/agile_icon.png">
+                            <p>Very active</p>
+                        </label>
+                    </div>
+
+                    <!-- <button id="calculate" class="btn btn-primary">Calculate</button> -->
+
+                    <br />
+                    <br />
+                    <form>
+                        <div id="price-output" class="row">
+                            <div id="3month-col" class="col-md-4">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        <h3 class="text-center">3 Month</h3>
+                                    </div>
+                                    <div class="panel-body text-center">
+                                        <p class="lead" style="font-size:40px"><strong id="3month-price">$5.14 / week</strong></p>
+                                    </div>
+                                    <ul class="list-group list-group-flush text-center">
+                                        <li class="list-group-item"><i class="icon-ok text-danger"></i> No savings</li>
+                                    </ul>
+                                    <div class="panel-footer">
+                                        <label for="3month" class="btn btn-lg btn-block btn-danger">Choose!</label>
+                                        <input id="3month" name="month" type="radio" value="3month" class="btn btn-lg btn-block btn-danger">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="6month-col" class="col-md-4">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        <h3 class="text-center">6 Month</h3>
+                                    </div>
+                                    <div class="panel-body text-center">
+                                        <p class="lead" style="font-size:40px"><strong id="6month-price">$5.04 / week</strong></p>
+                                    </div>
+                                    <ul class="list-group list-group-flush text-center">
+                                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Save 5%</li>
+                                    </ul>
+                                    <div class="panel-footer">
+                                        <label for="6month" class="btn btn-lg btn-block btn-danger">Choose!</label>
+                                        <input id="6month" name="month" type="radio" value="6month" class="btn btn-lg btn-block btn-danger">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="12month-col" class="col-md-4">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        <h3 class="text-center">12 Month</h3>
+                                    </div>
+                                    <div class="panel-body text-center">
+                                        <p class="lead" style="font-size:40px"><strong id="12month-price">$4.94 / week</strong></p>
+                                    </div>
+                                    <ul class="list-group list-group-flush text-center">
+                                        <li class="list-group-item"><i class="icon-ok text-danger"></i> Save 10%</li>
+                                    </ul>
+                                    <div class="panel-footer">
+                                        <label for="12month" class="btn btn-lg btn-block btn-danger">Choose!</label>
+                                        <input id="12month" name="month" type="radio" value="12month" class="btn btn-lg btn-block btn-danger">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="panel-body">
+                            <p class="lead" style="font-size:20px"><strong id="price">Interested? Fill in your details below to pre-order. You will be contacted to confirm when we launch.</strong></p>
+                        </div>
+                        <form>
+                            <input id="name-tf" type="email" value="" name="Name" placeholder="Name" class="form-control required email">
+                            <input id="email-tf" type="email" value="" name="Email" placeholder="Email Address" class="form-control required email">
+                            <a id="preorder" class="btn btn-lg btn-block btn-primary" href="#">Submit Preorder</a>
+                        </form>
+                    </div>
+
+                    <div id="confirmation" class="row" style="display: none;">
+                        <div class="panel-body">
+                            <p class="lead" style="font-size:20px"><strong id="price">Thanks for your pre-order. We'll be in touch soon. In the mean time, can we get a <a href="http://twitter.com/home?status=Cool!%20Fresh%20dog%20food%20and%20helping%20dogs%20in%20need.%20http://www.rockosdogfood.co/" target="_blank" >tweet?</a> </strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!-- Footer -->
@@ -206,7 +292,7 @@
         databaseURL: "https://rockos-dog-food-85c4f.firebaseio.com",
         storageBucket: "rockos-dog-food-85c4f.appspot.com",
       };
-      firebase.initializeApp(config);
+    //   firebase.initializeApp(config);
     </script>
 
     <script>
