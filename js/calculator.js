@@ -13,9 +13,13 @@ $(document).ready(function() {
         step: 5,
         slide: function( event, ui ) {
             $( "#weight-value" ).val(ui.value );
+            $(this).find('.ui-slider-handle').text(ui.value + "kg");
             weightOption = ui.value / 5 - 1;
-            // console.log(ui.value);
-        }
+        },
+        create: function(event, ui) {
+           var v=$(this).slider('value');
+           $(this).find('.ui-slider-handle').text(v + "kg");
+       }
     });
 
     $("#calculate").click(function() {
