@@ -23,4 +23,7 @@ $(document).ready(function() {
         document.getElementById("price").innerHTML = "From $" + obj.Options[weightOption].Price + " / week";
         document.getElementById("age").innerHTML = "";
     })
+
+
+    ga('send', 'event', 'Calculator', 'Confirm Purchase', '', 'these are the details for the event!', null);
 });
