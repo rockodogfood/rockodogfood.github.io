@@ -157,6 +157,39 @@ header .intro-text .skills {
     font-weight: 700;
 }
 
+.age label > input { /* HIDE RADIO */
+  display:none;
+}
+
+.age label > input + img { /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+
+.age label > input:checked + img { /* (CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+}
+
+.activity label > input { /* HIDE RADIO */
+  display:none;
+}
+
+.activity label > input + img { /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+
+.activity label > input:checked + img { /* (CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+}
+
+#weight-value {
+    background:rgba(0,0,0,0);
+    border:none;
+    color: #fff;
+    width: 30px;
+}
+
 .navbar a:focus {
     outline: 0;
 }

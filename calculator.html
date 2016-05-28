@@ -72,52 +72,61 @@
 
                 <h2>Rocko's Food Calculator</h2>
 
-                <!-- <p>How heavy is your dog?</p>
-                <select id="weight" onchange="onWeightChange()">
-                  <option value="none">Select Weight</option>
-                  <option value="0">5</option>
-                  <option value="1">10</option>
-                  <option value="2">15</option>
-                  <option value="3">20</option>
-                  <option value="4">25</option>
-                  <option value="5">30</option>
-                  <option value="6">35</option>
-                  <option value="7">40</option>
-                  <option value="8">45</option>
-                  <option value="9">50</option>
-                  <option value="10">65</option>
-                  <option value="11">70</option>
-                </select>
-
-                <p>How old is your dog?</p>
-                <select id="age">
-                  <option value="none">Select Age</option>
-                  <option value="0">Puppy</option>
-                  <option value="1">Adult</option>
-                  <option value="2">Senior</option>
-                </select>
-
-                <p>How active is your dog?</p>
-                <select id="activity">
-                  <option value="none">Select Activity</option>
-                  <option value="0">Less Active</option>
-                  <option value="1">Normal</option>
-                  <option value="2">Very Active</option>
-                </select> -->
-
-                <!-- <p id="price"></p> -->
-
                 <p>How heavy is your dog?</p>
-                <div id="slider"></div>
+                <div class="slider-wrap">
+                    <div id="slider"></div>
+                </div>
 
-                <p>
-                    <input type="text" id="weight-value" value=5 readonly style="border:0; color:#f6931f; font-weight:bold;">
-                </p>
+                <br />
+                <p><input type="text" id="weight-value" value=5 readonly>KG</p>
+
+                <div class="age">
+                    <p>How old is your dog?</p>
+                    <label>
+                        Puppy
+                        <input type="radio" name="fb" value="small" />
+                        <img src="img/puppy_icon.png">
+                    </label>
+
+                    <label>
+                        Adult
+                        <input type="radio" name="fb" value="big"/>
+                        <img src="img/adult_icon.png">
+                    </label>
+
+                    <label>
+                        Senior
+                        <input id="fb3" type="radio" name="fb" value="med" />
+                        <img src="img/senior_icon.png">
+                    </label>
+                </div>
+
+                <div class="activity">
+                    <p>How active is your dog?</p>
+                    <label>
+                        Not at all
+                        <input type="radio" name="fb" value="small" />
+                        <img src="img/lazy_icon.png">
+                    </label>
+
+                    <label>
+                        Somewhat
+                        <input type="radio" name="fb" value="big"/>
+                        <img src="img/normal_icon.png">
+                    </label>
+
+                    <label>
+                        Very active
+                        <input id="fb3" type="radio" name="fb" value="med" />
+                        <img src="img/agile_icon.png">
+                    </label>
+                </div>
 
                 <button id="calculate" class="btn btn-primary">Calculate</button>
 
                 <div id="price-output" class="row" style="display: none;">
-                  <div class="col-md-6">
+                    <br />
+                  <div class="col-md-6 col-md-offset-3 centered">
                       <div class="panel panel-info">
                          <div class="panel-heading"><h3 id="age" class="text-center">Puppy</h3></div>
                              <div class="panel-body text-center">
@@ -197,8 +206,8 @@
     <!-- <script src="js/jquery.js"></script>
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
