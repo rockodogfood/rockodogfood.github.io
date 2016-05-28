@@ -2,6 +2,7 @@ var text = '{"Options":[{"Weight":5,"Price":"5.04"},{"Weight":10,"Price":"9.80"}
 
 obj = JSON.parse(text);
 weightOption = 0;
+planOption = -1;
 
 $(document).ready(function() {
     // Slider to select weight
@@ -28,6 +29,7 @@ $(document).ready(function() {
             $('#6month-col').removeClass('checked');
             $('#12month-col').removeClass('checked');
             $('#3month-col').addClass('checked');
+            planOption = 3;
         };
     });
     $('#6month-col').click(function() {
@@ -35,6 +37,7 @@ $(document).ready(function() {
             $('#3month-col').removeClass('checked');
             $('#12month-col').removeClass('checked');
             $('#6month-col').addClass('checked');
+            planOption = 6;
         };
     });
     $('#12month-col').click(function() {
@@ -42,6 +45,7 @@ $(document).ready(function() {
             $('#3month-col').removeClass('checked');
             $('#6month-col').removeClass('checked');
             $('#12month-col').addClass('checked');
+            planOption = 12;
         };
     });
 
@@ -76,6 +80,8 @@ $(document).ready(function() {
         document.getElementById("3month-price").innerHTML = "$" + (threeMonthPrice).toFixed(2) + " / week";
         document.getElementById("6month-price").innerHTML = "$" + (sixMonthPrice).toFixed(2) + " / week";
         document.getElementById("12month-price").innerHTML = "$" + (twelveMonthPrice).toFixed(2) + " / week";
+
+        return price;
     };
 
     function applyAge(value) {
@@ -107,7 +113,9 @@ $(document).ready(function() {
         var postData = {
             name: document.getElementById("name-tf").value ,
             email: document.getElementById("email-tf").value,
-            price: obj.Options[weightOption].Price,
+            notes:  document.getElementById("notes-tf").value,
+            price: reCalcuate(),
+            planOption: planOption,
             weight: (weightOption + 1) * 5 ,
             orderTime: new Date(),
             age: $('input[name="age"]:checked').val(),
