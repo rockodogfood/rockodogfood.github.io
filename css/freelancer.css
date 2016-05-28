@@ -193,7 +193,7 @@ header .intro-text .skills {
 }
 
 #slider {
-    width: 40%;
+    width: 80%;
     display: inline-block;
 }
 
@@ -342,6 +342,11 @@ section.success a.active {
 @media(min-width:767px) {
     #portfolio .portfolio-item {
         margin: 0 0 30px;
+    }
+
+    #slider {
+        width: 40%;
+        display: inline-block;
     }
 }
 
