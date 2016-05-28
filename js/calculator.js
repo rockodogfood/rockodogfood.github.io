@@ -23,17 +23,25 @@ $(document).ready(function() {
        }
     });
 
-    $('#price-output input').click(function () {
-        $('input:not(:checked)').parent().parent().parent().removeClass("checked");
-        $('input:checked').parent().parent().parent().addClass("checked");
-        if ( $("#3month-col").hasClass("checked") ) {
-            alert("3");
-        }
-        else if ( $("#6month-col").hasClass("checked") ) {
-            alert("6");
-        }
-        else if ( $("#12month-col").hasClass("checked") ) {
-            alert("12");
+    $('#3month-col').click(function() {
+        if ( $("#3month").is(':checked') ) {
+            $('#6month-col').removeClass('checked');
+            $('#12month-col').removeClass('checked');
+            $('#3month-col').addClass('checked');
+        };
+    });
+    $('#6month-col').click(function() {
+        if ( $("#6month").is(':checked') ) {
+            $('#3month-col').removeClass('checked');
+            $('#12month-col').removeClass('checked');
+            $('#6month-col').addClass('checked');
+        };
+    });
+    $('#12month-col').click(function() {
+        if ( $("#12month").is(':checked') ) {
+            $('#3month-col').removeClass('checked');
+            $('#6month-col').removeClass('checked');
+            $('#12month-col').addClass('checked');
         };
     });
 

@@ -145,6 +145,11 @@ header .intro-text .skills {
     .navbar-fixed-top.navbar-shrink .navbar-brand {
         font-size: 1.5em;
     }
+
+    .navbar-brand img {
+        height: 65px;
+        margin-top: -25px;
+    }
 }
 
 .panel {
@@ -205,7 +210,9 @@ header .intro-text .skills {
     text-align: center;
 }
 
-#price-output input, #price-output a {
+#price-output input,
+#price-output a,
+#price-output textarea {
     margin-bottom: 10px;
     max-width: 700px;
     display: inline-block;
