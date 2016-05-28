@@ -147,6 +147,10 @@ header .intro-text .skills {
     }
 }
 
+.panel {
+    color: #2c3e50;
+}
+
 .navbar {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -163,6 +167,10 @@ header .intro-text .skills {
 
 .navbar .navbar-nav li a:focus {
     outline: 0;
+}
+
+.panel-danger {
+    background:
 }
 
 .navbar-default,
