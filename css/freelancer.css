@@ -164,6 +164,11 @@ header .intro-text .skills {
     margin-top: 30px;
 }
 
+.order-fields {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 .panel {
     color: #2c3e50;
 }
