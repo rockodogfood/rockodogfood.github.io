@@ -45,8 +45,8 @@ $(document).ready(function() {
         var postData = {
             name: document.getElementById("name-tf").value ,
             email: document.getElementById("email-tf").value,
-            price: (obj.Options[weightOption].Price + 1) * 5 ,
-            weight: weightOption.toString(),
+            price: obj.Options[weightOption].Price,
+            weight: (weightOption + 1) * 5 ,
             orderTime: new Date(),
             age: $('input[name="age"]:checked').val(),
             activity: $('input[name="activity"]:checked').val()
