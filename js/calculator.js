@@ -29,9 +29,10 @@ $(document).ready(function() {
         document.getElementById("price").innerHTML = "From $" + obj.Options[weightOption].Price + " / week";
     });
 
-    $("#preorder").click(function(){
-        $("#price-output").fadeOut(1000);
-        $("#confirmation").fadeIn(1000);
+    $("#preorder").click(function(event){
+        event.preventDefault();
+        $("#price-output").fadeOut(500);
+        $("#confirmation").fadeIn(500);
 
 
         var order = document.getElementById("name-tf").value + "," + document.getElementById("email-tf").value + "," + weightOption.toString();
