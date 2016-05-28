@@ -370,6 +370,7 @@ footer .footer-below {
     text-align: center;
     font-size: 20px;
     line-height: 45px;
+    padding-top: 14px;
 }
 
 .btn:focus,
