@@ -48,8 +48,8 @@ $(document).ready(function() {
             price: (obj.Options[weightOption].Price + 1) * 5 ,
             weight: weightOption.toString(),
             orderTime: new Date(),
-            age: $('input[name="age"]:checked').val();,
-            activity: $('input[name="activity"]:checked').val();
+            age: $('input[name="age"]:checked').val(),
+            activity: $('input[name="activity"]:checked').val()
         };
 
       // Get a key for a new Post.
