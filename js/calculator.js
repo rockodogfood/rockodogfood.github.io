@@ -35,9 +35,30 @@ $(document).ready(function() {
         $("#confirmation").fadeIn(500);
 
 
-        var order = document.getElementById("name-tf").value + "," + document.getElementById("email-tf").value + "," + weightOption.toString();
-        ga('send', 'event', 'Calculator', 'Confirm Purchase', order, 0, null);
+        //var order = document.getElementById("name-tf").value + "," + document.getElementById("email-tf").value + "," + weightOption.toString();
+        //ga('send', 'event', 'Calculator', 'Confirm Purchase', order, 0, null);
+        writeNewPost();
     });
+
+    function writeNewPost() {
+        // A post entry.
+        var postData = {
+            name: document.getElementById("name-tf").value ,
+            email: document.getElementById("email-tf").value,
+            price: (obj.Options[weightOption].Price + 1) * 5 ,
+            weight: weightOption.toString(),
+            orderTime: new Date()
+        };
+
+      // Get a key for a new Post.
+      var newPostKey = firebase.database().ref().child('orders').push().key;
+
+      // Write the new post's data simultaneously in the posts list and the user's post list.
+      var updates = {};
+      updates['/orders/' + newPostKey] = postData;
+
+      return firebase.database().ref().update(updates);
+    };
 
 
 });
