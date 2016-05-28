@@ -26,8 +26,7 @@ $(document).ready(function() {
         $("#confirmation").hide();
 
         $("#price-output").show();
-        document.getElementById("price").innerHTML = "From $" + obj.Options[weightOption].Price.toFixed(2) + " / week";
-        //document.getElementById("age").innerHTML = "";
+        document.getElementById("price").innerHTML = "From $" + obj.Options[weightOption].Price + " / week";
     });
 
     $("#preorder").click(function(){

@@ -201,6 +201,21 @@ header .intro-text .skills {
     text-align: center;
 }
 
+#price-output form {
+    text-align: center;
+}
+
+#price-output input, #price-output a {
+    margin-bottom: 10px;
+    max-width: 700px;
+    display: inline-block;
+}
+
+#price a {
+    color: #fff;
+    text-decoration: underline;
+}
+
 .ui-slider .ui-slider-handle {
     width: 50px !important;
     height: 24px !important;
