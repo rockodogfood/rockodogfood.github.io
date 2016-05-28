@@ -167,7 +167,7 @@ header .intro-text .skills {
 }
 
 .age label > input:checked + img { /* (CHECKED) IMAGE STYLES */
-  border:2px solid #6C809A;
+  border:2px solid #ffffff;
   border-radius: 4px;
 }
 
@@ -181,7 +181,7 @@ header .intro-text .skills {
 }
 
 .activity label > input:checked + img { /* (CHECKED) IMAGE STYLES */
-  border:2px solid #6C809A;
+  border:2px solid #ffffff;
   border-radius: 4px;
 }
 
