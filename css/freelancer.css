@@ -269,6 +269,10 @@ section.success a.active {
     transition: all .3s ease-in-out;
 }
 
+header .btn-outline {
+    margin-left: 20px;
+}
+
 .btn-outline:hover,
 .btn-outline:focus,
 .btn-outline:active,
