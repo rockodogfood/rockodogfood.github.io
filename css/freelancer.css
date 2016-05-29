@@ -123,6 +123,10 @@ header .intro-text .skills {
     }
 }
 
+.head-image {
+    width: 700px;
+}
+
 @media(min-width:768px) {
     .navbar-fixed-top {
         padding: 25px 0;
