@@ -61,7 +61,7 @@ $(document).ready(function() {
 
     $("#preorder").click(function(event){
         event.preventDefault();
-        $("#price-output").fadeOut(500);
+        $("#price-output, .calculator-fields").fadeOut(500);
         $("#confirmation").fadeIn(500);
 
         writeNewPost();

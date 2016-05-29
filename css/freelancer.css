@@ -506,6 +506,21 @@ footer .footer-below {
     outline: 0;
 }
 
+.cute-image {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.cute-image img {
+    width: 500px;
+    margin-bottom: 30px;
+}
+
+@media(max-width:768px) {
+    .cute-image img {
+        width: 300px;
+    }
+}
 
 .scroll-top {
     z-index: 1049;

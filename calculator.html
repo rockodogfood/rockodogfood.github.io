@@ -114,61 +114,59 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>Create your plan</h2>
-                    <hr class="star-light">
-                    <h4>How much does your dog weigh?</h4>
-                    <div class="slider-wrap">
-                        <div id="slider"></div>
+                    <div class="calculator-fields">
+                        <h2>Create your plan</h2>
+                        <hr class="star-light">
+                        <h4>How much does your dog weigh?</h4>
+                        <div class="slider-wrap">
+                            <div id="slider"></div>
+                        </div>
+
+                        <br />
+
+                        <div id="age" class="age">
+                            <h4>How old is your dog?</h4>
+                            <label>
+                                <input type="radio" name="age" value="Puppy" />
+                                <img src="img/puppy_icon.png">
+                                <p>Puppy</p>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="age" value="Adult"/>
+                                <img src="img/adult_icon.png">
+                                <p>Adult</p>
+                            </label>
+
+                            <label>
+                                <input id="fb3" type="radio" name="age" value="Senior" />
+                                <img src="img/senior_icon.png">
+                                <p>Senior</p>
+                            </label>
+                        </div>
+
+                        <div id="activity" class="activity">
+                            <h4>How active is your dog?</h4>
+                            <label>
+                                <input type="radio" name="activity" value="Less" />
+                                <img src="img/lazy_icon.png">
+                                <p>Not at all</p>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="activity" value="Normal"/>
+                                <img src="img/normal_icon.png">
+                                <p>Somewhat</p>
+                            </label>
+
+                            <label>
+                                <input id="fb3" type="radio" name="activity" value="Active" />
+                                <img src="img/agile_icon.png">
+                                <p>Very active</p>
+                            </label>
+                        </div>
                     </div>
 
-                    <br />
-
-                    <div id="age" class="age">
-                        <h4>How old is your dog?</h4>
-                        <label>
-                            <input type="radio" name="age" value="Puppy" />
-                            <img src="img/puppy_icon.png">
-                            <p>Puppy</p>
-                        </label>
-
-                        <label>
-                            <input type="radio" name="age" value="Adult"/>
-                            <img src="img/adult_icon.png">
-                            <p>Adult</p>
-                        </label>
-
-                        <label>
-                            <input id="fb3" type="radio" name="age" value="Senior" />
-                            <img src="img/senior_icon.png">
-                            <p>Senior</p>
-                        </label>
-                    </div>
-
-                    <div id="activity" class="activity">
-                        <h4>How active is your dog?</h4>
-                        <label>
-                            <input type="radio" name="activity" value="Less" />
-                            <img src="img/lazy_icon.png">
-                            <p>Not at all</p>
-                        </label>
-
-                        <label>
-                            <input type="radio" name="activity" value="Normal"/>
-                            <img src="img/normal_icon.png">
-                            <p>Somewhat</p>
-                        </label>
-
-                        <label>
-                            <input id="fb3" type="radio" name="activity" value="Active" />
-                            <img src="img/agile_icon.png">
-                            <p>Very active</p>
-                        </label>
-                    </div>
-
-                    <!-- <button id="calculate" class="btn btn-primary">Calculate</button> -->
-
-                    <br />
-                    <br />
                     <form>
                         <div id="price-output" class="row">
                             <div id="3month-col" class="col-md-4">
@@ -236,8 +234,15 @@
                     </div>
 
                     <div id="confirmation" class="row" style="display: none;">
-                        <div class="panel-body">
-                            <p class="lead" style="font-size:20px"><strong id="price">Thanks for your pre-order. We'll be in touch soon. In the mean time, can we get a <a href="http://twitter.com/home?status=Cool!%20Fresh%20dog%20food%20and%20helping%20dogs%20in%20need.%20http://www.rockosdogfood.co/" target="_blank" >tweet?</a> </strong></p>
+                        <h2>Thank you</h2>
+                        <hr class="star-light">
+                        <div class="cute-image col-md-12 text-center">
+                            <img class="img-circle" src="img/cute.jpg">
+                            <h2>Charlie</h2>
+                            <h4>Thanks you for your subscription</h4>
+                            <p class="lead" style="font-size:20px">
+                                <strong>We'll be in touch soon. In the mean time, can we get a <a href="http://twitter.com/home?status=Cool!%20Fresh%20dog%20food%20and%20helping%20dogs%20in%20need.%20http://www.rockosdogfood.co/" target="_blank" >tweet?</a></strong>
+                            </p>
                         </div>
                     </div>
                 </div>
