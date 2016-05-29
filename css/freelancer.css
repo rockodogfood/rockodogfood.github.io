@@ -258,6 +258,9 @@ section.success a.btn,
 section.success a.btn:hover {
     color: #fff;
 }
+section.success a.btn-outline:hover {
+    color: #75BBA7;
+}
 
 .ui-slider .ui-slider-handle {
     width: 50px !important;
